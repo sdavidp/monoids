@@ -5,6 +5,9 @@ object WordCountCatsWC {
 
   case class WC(v: Int) extends AnyVal
 
+  // While this serves as a first step to providing our own monoid for
+  // the map's V type (and shows us Monoid.instance),
+  // Keith Pinson pointed out that this violates the Monoid identity law.
   implicit val icbm: Monoid[WC] =
     Monoid.instance[WC](
       WC(0),
