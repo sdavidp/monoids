@@ -1,8 +1,9 @@
 package org.sdp
 
 object WordCountMonoidNumeric {
+  import MapMonoidWithNumericV._
 
-  private val wordsMonoid = MapMonoidWithNumericV.mapMonoid[String, Int]
+  private val wordsMonoid = mapMonoid[String, Int]
 
   def count(s: String): Map[String, Int] =
     s.split("\\s+")

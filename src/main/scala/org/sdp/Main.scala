@@ -16,7 +16,7 @@ object Main {
     TreeMap.from(m).mkString("\n")
 
   def main(args: Array[String]): Unit = {
-    import WordCountCatsWC._
+    import WordCountBaeldung._
 
     val map = count(words)
 
