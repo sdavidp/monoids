@@ -12,11 +12,11 @@ object Main {
       |I wouldn’t have thought I thought
       |""".stripMargin
 
-  def pretty(m: Map[String, Int]): String =
+  def pretty[K: Ordering, V](m: Map[K, V]): String =
     TreeMap.from(m).mkString("\n")
 
   def main(args: Array[String]): Unit = {
-    import WordCountBaeldung._
+    import WordCountCatsWC._
 
     val map = count(words)
 
