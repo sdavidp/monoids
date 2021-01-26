@@ -8,9 +8,9 @@ object WordCountCatsFoldMap {
   import cats.Monoid
   import cats.syntax.all._
 
-  def count [WC: Monoid](s: String)(f: String => WC): WC = {
+  def count[WC: Monoid](s: String)(f: String => WC): WC = {
     s.split("\\s+")
-      .toList
+      .to(LazyList)
       .foldMap(f)
   }
 }
